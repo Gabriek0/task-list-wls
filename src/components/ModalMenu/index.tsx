@@ -2,33 +2,51 @@ import Image from 'next/image';
 import Modal from 'react-modal';
 import styles from './styles.module.scss';
 
-import
+import avatarIcon from '../../../public/images/avatar.svg';
+import clipBoardIcon from '../../../public/images/clipboard-list.svg';
+import informationsIcon from '../../../public/images/informations.svg';
 
 export function ModalMenu() {
     return (
         <Modal
-            isOpen={true}
+            isOpen={false}
             className={styles.modalMenuContainer}
         >
             <div className={styles.modalMenuContent}>
                 <div className={styles.avatarContainer}>
                     <div className={styles.imageAvatarWrapper}>
                         <Image
-                            src={ }
+                            src={avatarIcon}
                             alt='Avatar'
                             height={41}
                             width={41}
                         />
                     </div>
-                    <div>
+                    <div className={styles.aboutWrapper}>
                         <h2>Nome</h2>
                         <p>Função</p>
                     </div>
                 </div>
 
                 <div className={styles.buttonsContainer}>
-                    <button>Tarefas</button>
-                    <button>Sobre</button>
+                    <button>
+                        <Image
+                            src={clipBoardIcon}
+                            alt='Clipboard list'
+                            width={24}
+                            height={24}
+                        />
+                        Tarefas
+                    </button>
+                    <button>
+                        <Image
+                            src={informationsIcon}
+                            alt='Informations about'
+                            width={24}
+                            height={24}
+                        />
+                        Sobre
+                    </button>
                 </div>
             </div>
 

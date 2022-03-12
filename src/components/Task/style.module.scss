@@ -10,12 +10,6 @@
 
     position: relative;
 
-    .imageDotsWrapper {
-        position: absolute;
-        top: 1.5rem;
-        right: 2rem;
-    }
-
     h2 {
         height: 21px;
         width: 49px;
@@ -30,22 +24,24 @@
         position: absolute;
     }
 
-    button {
-        bottom: 1rem;
-        position: absolute;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        color: var(--black-100);
-        background: var(--white);
-        font-weight: 700 !important;
-        font-size: 0.8rem;
-        height: 2rem;
-        width: 6.5rem;
+    .buttonContainer {
+        button {
+            bottom: 1rem;
+            position: absolute;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            color: var(--black-100);
+            background: var(--white);
+            font-weight: 700 !important;
+            font-size: 0.8rem;
+            height: 2rem;
+            width: 6.5rem;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 0.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 0.2rem;
+        }
     }
 }

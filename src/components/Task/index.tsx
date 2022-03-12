@@ -3,25 +3,19 @@ import styles from './style.module.scss';
 import checkIcon from '../../../public/images/check.svg';
 import dotsIcon from '../../../public/images/dots.svg';
 import Image from 'next/image';
+import { EditTaskButton } from '../EditTaskButton';
 
 export function Task() {
     return (
         <>
             <div className={styles.tasksContainer}>
-                <div className={styles.imageDotsWrapper}>
-                    <Image
-                        src={dotsIcon}
-                        alt="Edit"
-                        height={16}
-                        width={4}
-                    />
-                </div>
+                <EditTaskButton />
 
                 <h2>Nome</h2>
                 <p>Descrição da tarefa.</p>
 
                 <div className={styles.buttonContainer}>
-                    <button>
+                    <button >
                         <Image
                             src={checkIcon}
                             alt="Check"

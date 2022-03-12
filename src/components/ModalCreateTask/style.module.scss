@@ -1,0 +1,88 @@
+.modalCreateTask {
+    background: var(--white);
+    border-radius: 10px;
+    height: 18rem;
+    width: 20rem;
+}
+
+.modalCreateTaskOverlay {
+    background: var(--black-30);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalCreateTaskContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: relative;
+
+    h2 {
+        color: var(--black-100);
+        margin-bottom: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .inputsContainer {
+        .inputName {
+            position: relative;
+        }
+
+        .inputDescription {
+            position: relative;
+        }
+
+        input {
+            position: relative;
+            height: 3rem;
+            width: 100%;
+            margin-bottom: 2rem;
+            border: 2px solid var(--black-30);
+            border-radius: 5px;
+            color: var(--black-60);
+            outline: 0;
+            padding: 0 1rem;
+
+            &::placeholder {
+                color: var(--black-30);
+            }
+        }
+
+        label {
+            position: absolute;
+            font-size: 0.7rem;
+            top: -5px;
+            left: 10px;
+            background: var(--white);
+            color: var(--black-60);
+            font-weight: 500 !important;
+            padding: 0 0.4rem;
+        }
+    }
+
+    .buttonsContainer {
+        display: inline-block;
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
+
+        button {
+            font-weight: 500 !important;
+            text-transform: uppercase;
+            font-size: 1rem;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--blue-25);
+            cursor: pointer;
+        }
+    }
+}

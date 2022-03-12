@@ -5,9 +5,9 @@ import styles from './styles.module.scss';
 import avatarIcon from '../../../public/images/avatar.svg';
 import clipBoardIcon from '../../../public/images/clipboard-list.svg';
 import informationsIcon from '../../../public/images/informations.svg';
-import { ModalMenuProps } from '../../types/ModalMenuProps'
+import { ModalProps } from '../../types/ModalProps';
 
-export function ModalMenu({ isOpen, onRequestClose }: ModalMenuProps) {
+export function ModalMenu({ isOpen, onRequestClose }: ModalProps) {
 
     return (
         <Modal

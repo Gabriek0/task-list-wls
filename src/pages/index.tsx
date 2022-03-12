@@ -11,8 +11,8 @@ const Home: NextPage = () => {
       <Header />
       <Body />
       <Footer />
-      <ModalMenu />
     </>
+
   )
 }
 

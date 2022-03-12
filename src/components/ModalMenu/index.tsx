@@ -5,11 +5,14 @@ import styles from './styles.module.scss';
 import avatarIcon from '../../../public/images/avatar.svg';
 import clipBoardIcon from '../../../public/images/clipboard-list.svg';
 import informationsIcon from '../../../public/images/informations.svg';
+import { ModalMenuProps } from '../../types/ModalMenuProps'
 
-export function ModalMenu() {
+export function ModalMenu({ isOpen, onRequestClose }: ModalMenuProps) {
+
     return (
         <Modal
-            isOpen={false}
+            isOpen={isOpen}
+            onRequestClose={onRequestClose}
             className={styles.modalMenuContainer}
         >
             <div className={styles.modalMenuContent}>

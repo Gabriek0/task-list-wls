@@ -1,11 +1,14 @@
 import Modal from 'react-modal';
 import styles from './styles.module.scss';
 
-export function ModalEditTask() {
+import { ModalProps } from '../../types/ModalProps'
+
+export function ModalEditTask({ isOpen, onRequestClose }: ModalProps) {
     return (
         <>
             <Modal
-                isOpen={true}
+                isOpen={isOpen}
+                onRequestClose={onRequestClose}
                 overlayClassName={styles.modalEditTaskOverlay}
                 className={styles.modalEditTask}
             >
@@ -30,7 +33,11 @@ export function ModalEditTask() {
                     </div>
 
                     <div className={styles.buttonsContainer}>
-                        <button>Cancelar</button>
+                        <button
+                            onClick={onRequestClose}
+                        >
+                            Cancelar
+                        </button>
                         <button>Salvar</button>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 .modalEditTask {
     background: var(--white);
     border-radius: 10px;
-    height: 18rem;
+    height: 23rem;
     width: 20rem;
 }
 
@@ -21,6 +21,7 @@
 
 .modalEditTaskContainer {
     display: flex;
+    height: 100%;
     flex-direction: column;
     padding: 1.5rem;
     position: relative;
@@ -68,11 +69,33 @@
         }
     }
 
+    .toggleContainer {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        background: var(--black-10);
+        height: 2.5rem;
+        padding: 0.3rem 2rem;
+
+        button {
+            background: transparent;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            color: var(--black-60);
+
+            &:hover {
+                background: var(--white);
+                color: var(--black);
+            }
+        }
+    }
+
     .buttonsContainer {
         display: inline-block;
         position: absolute;
         right: 1rem;
-        bottom: 0;
+        bottom: 1rem;
 
         button {
             font-weight: 500 !important;

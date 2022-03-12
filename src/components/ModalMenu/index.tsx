@@ -14,6 +14,7 @@ export function ModalMenu({ isOpen, onRequestClose }: ModalProps) {
             isOpen={isOpen}
             onRequestClose={onRequestClose}
             className={styles.modalMenuContainer}
+            overlayClassName={styles.modalMenuOverlay}
         >
             <div className={styles.modalMenuContent}>
                 <div className={styles.avatarContainer}>

@@ -1,8 +1,31 @@
+@keyframes appear {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.modalMenuOverlay {
+    background: var(--black-30);
+    backdrop-filter: blur(2px);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .modalMenuContainer {
     height: 100%;
-    width: 50%;
     background: var(--blue);
     color: var(--white);
+    width: 50%;
+
+    animation: appear 800ms;
+    animation-timing-function: ease;
 
     .modalMenuContent {
         padding: 2rem 3rem;

@@ -1,0 +1,68 @@
+.modalMenuContainer {
+    height: 100%;
+    width: 50%;
+    background: var(--blue);
+    color: var(--white);
+
+    .modalMenuContent {
+        padding: 2rem 3rem;
+
+        .avatarContainer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            &:last-child {
+                display: flex;
+            }
+
+            h2 {
+                font-size: 1rem;
+                margin: 0;
+                margin-bottom: 3px;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: 300 !important;
+                margin: 0;
+                margin-bottom: 1.3rem;
+            }
+
+            &:after {
+                content: "";
+                border-radius: 3px;
+                width: 143px;
+                height: 1px;
+                background: var(--white);
+                position: absolute;
+                bottom: 0;
+            }
+        }
+
+        .buttonsContainer {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            button {
+                margin-bottom: 0.5rem;
+                font-weight: 600 !important;
+                height: 2.3rem;
+                width: 8rem;
+                border: none;
+                outline: none;
+                color: var(--white);
+                background: transparent;
+                border-radius: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background: var(--blue-50);
+                }
+            }
+        }
+    }
+}

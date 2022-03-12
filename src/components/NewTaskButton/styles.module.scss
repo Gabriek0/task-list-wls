@@ -1,0 +1,21 @@
+.newTaskButton {
+    height: 4rem;
+    width: 10rem;
+    border-radius: 10px;
+    background: var(--blue);
+    color: var(--white);
+    outline: none;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    font-weight: 5 00 !important;
+    font-size: 1.1rem;
+
+    .imagePlusWrapper {
+        margin-right: 1rem;
+    }
+}

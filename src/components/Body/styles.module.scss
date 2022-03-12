@@ -1,0 +1,15 @@
+.bodyContainer {
+    height: 70vh;
+
+    h1 {
+        margin-left: 1rem;
+        font-weight: 600 !important;
+    }
+
+    .bodyContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem;
+    }
+}

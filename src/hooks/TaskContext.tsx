@@ -10,6 +10,8 @@ interface TaskContextData {
     tasks: TaskType[],
     deleteTask: (id: string) => void;
     createTask: (title: string, description: string) => void;
+    searchTask: (searchTerm: string) => void;
+    editTask: (guid: string, title: string, description: string, situation: boolean) => void;
 }
 
 const TaskContext = createContext<TaskContextData>(
@@ -29,8 +31,14 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
         setTasks(getTaskResponse.data);
     }
 
-    function deleteTask(id: string) {
-        api.delete(`tasks/${id}`);
+    async function searchTask(searchTerm: string) {
+        setTasks((prevState: any) => {
+            return prevState.filter((task: TaskType) => task.title.includes(searchTerm) || task.description.includes(searchTerm))
+        });
+    }
+
+    async function deleteTask(id: string) {
+        await api.delete(`tasks/${id}`);
         setTasks((prevState: any) => {
             return prevState.filter((task: TaskType) => task.guid !== id)
         })
@@ -38,8 +46,8 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
 
     async function createTask(title: string, description: string) {
         const newTask = await api.post('tasks', {
-            title: title,
-            description: description
+            title,
+            description
         })
 
         const task = newTask.data;
@@ -50,9 +58,33 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
         })
     }
 
+    async function editTask(guid: string, title: string, description: string, situation: boolean) {
+        await api.patch(`tasks/${guid}`, {
+            title,
+            description,
+            situation: situation === true ? 'completed' : 'uncompleted'
+        })
+
+
+        setTasks((prevState: any) => {
+            return prevState.map((task: TaskType) => {
+                if (task.guid === guid) {
+                    return {
+                        guid,
+                        title,
+                        description,
+                        situation: situation === true ? 'completed' : 'uncompleted'
+                    }
+                }
+
+                return task;
+            })
+        })
+    }
+
     return (
         <TaskContext.Provider
-            value={{ tasks, deleteTask, createTask }}
+            value={{ tasks, deleteTask, createTask, searchTask, editTask }}
         >
             {children}
         </TaskContext.Provider>

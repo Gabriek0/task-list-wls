@@ -69,6 +69,7 @@ export function ModalOptions({ id, isOpen, onRequestClose }: ModalProps) {
             <ModalEditTask
                 isOpen={isModalOptionsOpen}
                 onRequestClose={handleModalOptionsClose}
+                id={id}
             />
         </div>
     )

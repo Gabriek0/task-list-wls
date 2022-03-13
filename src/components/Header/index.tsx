@@ -1,12 +1,25 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import menuIcon from '../../../public/images/menu.svg';
 import searchIcon from '../../../public/images/search.svg';
+import { useTasks } from '../../hooks/TaskContext';
 import { MenuButton } from '../MenuButton';
 
 import styles from './styles.module.scss';
 
 
 export function Header() {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const { searchTask } = useTasks();
+
+    useEffect(() => {
+        if (searchTerm.length > 0) {
+            searchTask(searchTerm)
+        }
+
+    }, [searchTerm]);
+
     return (
         <>
             <div className={styles.headerContainer}>
@@ -22,7 +35,10 @@ export function Header() {
                             height={21}
                         />
                     </div>
-                    <input type="text" placeholder='Procurar tarefas' />
+                    <input
+                        onChange={(event) => setSearchTerm(event.target.value)}
+                        type="text"
+                        placeholder='Procurar tarefas' />
                 </div>
             </div>
         </>

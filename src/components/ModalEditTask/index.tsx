@@ -2,8 +2,34 @@ import Modal from 'react-modal';
 import styles from './styles.module.scss';
 
 import { ModalProps } from '../../types/ModalProps'
+import { useState } from 'react';
+import { useTasks } from '../../hooks/TaskContext';
 
-export function ModalEditTask({ isOpen, onRequestClose }: ModalProps) {
+export function ModalEditTask({ id, isOpen, onRequestClose }: ModalProps) {
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [isTaskCompleted, setIsTaskCompleted] = useState(false);
+
+    console.log(id)
+
+    const { editTask } = useTasks();
+
+    function toggleTaskCompleted(isTaskCompleted: boolean) {
+        if (isTaskCompleted) {
+            setIsTaskCompleted(true);
+        } else {
+            setIsTaskCompleted(false);
+        }
+    };
+
+    function handleChangeTask() {
+        console.log(id)
+        if (id) {
+            editTask(id, title, description, isTaskCompleted)
+        }
+        onRequestClose();
+    }
+
     return (
         <>
             <Modal
@@ -13,23 +39,39 @@ export function ModalEditTask({ isOpen, onRequestClose }: ModalProps) {
                 className={styles.modalEditTask}
             >
                 <div className={styles.modalEditTaskContainer}>
-                    <h2>Criar Tarefa</h2>
+                    <h2>Editar tarefa</h2>
 
                     <div className={styles.inputsContainer}>
                         <div className={styles.inputName}>
-                            <input type="text" placeholder="" />
+                            <input
+                                type="text"
+                                placeholder=""
+                                onChange={(event) => setTitle(event.target.value)}
+                            />
                             <label htmlFor="">Nome da tarefa</label>
                         </div>
 
                         <div className={styles.inputDescription}>
-                            <input type="text" placeholder="" />
+                            <input
+                                type="text"
+                                placeholder=""
+                                onChange={(event) => setDescription(event.target.value)}
+                            />
                             <label htmlFor="">Descrição da tarefa</label>
                         </div>
                     </div>
 
                     <div className={styles.toggleContainer}>
-                        <button>Em progresso</button>
-                        <button>Concluído</button>
+                        <button
+                            onClick={() => toggleTaskCompleted(false)}
+                        >
+                            Em progresso
+                        </button>
+                        <button
+                            onClick={() => toggleTaskCompleted(true)}
+                        >
+                            Concluído
+                        </button>
                     </div>
 
                     <div className={styles.buttonsContainer}>
@@ -38,7 +80,11 @@ export function ModalEditTask({ isOpen, onRequestClose }: ModalProps) {
                         >
                             Cancelar
                         </button>
-                        <button>Salvar</button>
+                        <button
+                            onClick={handleChangeTask}
+                        >
+                            Salvar
+                        </button>
                     </div>
                 </div>
 

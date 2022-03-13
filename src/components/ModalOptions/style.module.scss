@@ -1,0 +1,35 @@
+.modalOptionsOverlay {
+    background: var(--black-30);
+    backdrop-filter: blur(2px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modalOptions {
+    position: absolute;
+    top: 17rem;
+    right: 2rem;
+    height: 6rem;
+    width: 12rem;
+    border-radius: 5px;
+    background: var(--white);
+    padding: 1.3rem;
+    font-size: 1rem;
+
+    button {
+        font-weight: 500 !important;
+        color: var(--black-40);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.8rem;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background: transparent;
+    }
+}

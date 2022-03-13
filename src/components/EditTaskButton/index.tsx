@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import dotsIcon from '../../../public/images/dots.svg'
-import { ModalEditTask } from "../ModalEditTask";
+import { ModalOptions } from "../ModalOptions";
 import styles from './styles.module.scss'
 
 export function EditTaskButton() {
@@ -30,7 +30,7 @@ export function EditTaskButton() {
                     />
                 </div>
             </button>
-            <ModalEditTask
+            <ModalOptions
                 isOpen={isEditTaskModalOpen}
                 onRequestClose={handleCloseEditTaskModal}
             />

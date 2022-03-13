@@ -4,7 +4,7 @@ import dotsIcon from '../../../public/images/dots.svg'
 import { ModalOptions } from "../ModalOptions";
 import styles from './styles.module.scss'
 
-export function EditTaskButton() {
+export function EditTaskButton({ id }: { id: string }) {
     const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false);
 
     function handleOpenEditTaskModal() {
@@ -33,6 +33,7 @@ export function EditTaskButton() {
             <ModalOptions
                 isOpen={isEditTaskModalOpen}
                 onRequestClose={handleCloseEditTaskModal}
+                id={id}
             />
         </>
     )

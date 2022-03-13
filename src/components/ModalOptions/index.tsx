@@ -7,9 +7,13 @@ import trashIcon from '../../../public/images/trash.svg';
 import Image from 'next/image';
 import { ModalProps } from '../../types/ModalProps'
 import { useState } from 'react';
+import api from '../../services/api';
+import { useTasks } from '../../hooks/TaskContext';
 
-export function ModalOptions({ isOpen, onRequestClose }: ModalProps) {
+export function ModalOptions({ id, isOpen, onRequestClose }: ModalProps) {
     const [isModalOptionsOpen, setIsModalOptionsOpen] = useState(false);
+
+    const { deleteTask } = useTasks();
 
     function handleModalOptionsOpen() {
         setIsModalOptionsOpen(true);
@@ -20,6 +24,14 @@ export function ModalOptions({ isOpen, onRequestClose }: ModalProps) {
         setIsModalOptionsOpen(false);
         onRequestClose();
     };
+
+    function handleDeleteTask() {
+        if (id) {
+            deleteTask(id);
+        }
+
+        handleModalOptionsClose();
+    }
 
     return (
         <div>
@@ -42,7 +54,8 @@ export function ModalOptions({ isOpen, onRequestClose }: ModalProps) {
                     Atualizar tarefa
                 </button>
                 <button
-                    onClick={handleModalOptionsClose}
+                    onClick={handleDeleteTask}
+
                 >
                     <Image
                         src={trashIcon}

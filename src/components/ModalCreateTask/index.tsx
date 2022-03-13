@@ -3,8 +3,21 @@ import Modal from 'react-modal';
 import styles from './style.module.scss';
 
 import { ModalProps } from '../../types/ModalProps';
+import { useState } from 'react';
+import api from '../../services/api';
+import { useTasks } from '../../hooks/TaskContext';
 
 export function ModalCreateTask({ isOpen, onRequestClose }: ModalProps) {
+    const [taskTitle, setTaskTitle] = useState('');
+    const [taskDescription, setTaskDescription] = useState('');
+
+    const { createTask } = useTasks();
+
+    function handleCreateTask() {
+        createTask(taskTitle, taskDescription);
+        onRequestClose();
+    }
+
     return (
         <Modal
             isOpen={isOpen}
@@ -17,12 +30,20 @@ export function ModalCreateTask({ isOpen, onRequestClose }: ModalProps) {
 
                 <div className={styles.inputsContainer}>
                     <div className={styles.inputName}>
-                        <input type="text" placeholder="" />
+                        <input
+                            type="text"
+                            placeholder=""
+                            onChange={(event) => setTaskTitle(event?.target.value)}
+                        />
                         <label htmlFor="">Nome da tarefa</label>
                     </div>
 
                     <div className={styles.inputDescription}>
-                        <input type="text" placeholder="" />
+                        <input
+                            type="text"
+                            placeholder=""
+                            onChange={(event) => setTaskDescription(event?.target.value)}
+                        />
                         <label htmlFor="">Descrição da tarefa</label>
                     </div>
                 </div>
@@ -34,7 +55,10 @@ export function ModalCreateTask({ isOpen, onRequestClose }: ModalProps) {
                         Cancelar
 
                     </button>
-                    <button>Salvar</button>
+                    <button
+                        onClick={handleCreateTask}
+                    >Salvar
+                    </button>
                 </div>
             </div>
 

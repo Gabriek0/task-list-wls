@@ -1,5 +1,5 @@
 import { NewTaskButton } from '../NewTaskButton';
-import { Task } from '../Task';
+import { TaskList } from '../TaskList';
 import styles from './styles.module.scss';
 
 export function Body() {
@@ -9,7 +9,7 @@ export function Body() {
                 <h1>Tarefas</h1>
 
                 <div className={styles.bodyContent}>
-                    <Task />
+                    <TaskList />
                 </div>
             </div>
         </>

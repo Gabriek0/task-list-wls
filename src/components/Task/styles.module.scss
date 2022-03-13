@@ -1,6 +1,7 @@
 .tasksContainer {
     height: 10rem;
     width: 24rem;
+    margin-bottom: 1.3rem;
 
     padding: 1rem 2rem;
 
@@ -11,6 +12,7 @@
     position: relative;
 
     h2 {
+        white-space: nowrap;
         height: 21px;
         width: 49px;
         top: 0;
@@ -19,6 +21,7 @@
     }
 
     p {
+        white-space: nowrap;
         font-weight: 500 !important;
         top: 2rem;
         position: absolute;

@@ -2,16 +2,16 @@ import type { NextPage } from 'next'
 
 import { Header } from '../../src/components/Header'
 import { Body } from '../components/Body'
-import { Footer } from '../components/Footer'
 import { TaskContextProvider } from '../hooks/TaskContext'
+
+import styles from './home.module.scss';
 
 const Home: NextPage = () => {
 
   return (
     <TaskContextProvider>
-      <Header />
+      <div className={styles.modalMenuDesktop}></div>
       <Body />
-      <Footer />
     </TaskContextProvider>
 
   )

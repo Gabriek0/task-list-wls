@@ -54,3 +54,17 @@
         }
     }
 }
+
+@media screen and (min-width: 1366px) {
+    .headerContainer {
+        display: flex;
+        justify-content: center;
+
+        .searchContainer {
+            display: flex;
+            justify-content: center;
+            width: 600px;
+            margin-right: 4rem;
+        }
+    }
+}

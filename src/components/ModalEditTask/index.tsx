@@ -10,8 +10,6 @@ export function ModalEditTask({ id, isOpen, onRequestClose }: ModalProps) {
     const [description, setDescription] = useState('');
     const [isTaskCompleted, setIsTaskCompleted] = useState(false);
 
-    console.log(id)
-
     const { editTask } = useTasks();
 
     function toggleTaskCompleted(isTaskCompleted: boolean) {

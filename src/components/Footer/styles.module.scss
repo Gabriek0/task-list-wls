@@ -6,3 +6,10 @@
         right: 1rem;
     }
 }
+
+@media screen and (min-width: 1366px) {
+    .footerContainer {
+        width: 583px;
+        margin-left: 2.3rem;
+    }
+}

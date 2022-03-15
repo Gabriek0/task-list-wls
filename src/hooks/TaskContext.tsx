@@ -11,7 +11,7 @@ interface TaskContextData {
     deleteTask: (id: string) => void;
     createTask: (title: string, description: string) => void;
     searchTask: (searchTerm: string) => void;
-    editTask: (guid: string, title: string, description: string, situation: boolean) => void;
+    editTask: (guid: string, title?: string, description?: string, situation?: boolean) => void;
 }
 
 const TaskContext = createContext<TaskContextData>(
@@ -58,7 +58,7 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
         })
     }
 
-    async function editTask(guid: string, title: string, description: string, situation: boolean) {
+    async function editTask(guid: string, title?: string, description?: string, situation?: boolean) {
         await api.patch(`tasks/${guid}`, {
             title,
             description,
@@ -71,8 +71,8 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
                 if (task.guid === guid) {
                     return {
                         guid,
-                        title,
-                        description,
+                        title: !title ? task.title : title,
+                        description: !description ? task.description : description,
                         situation: situation === true ? 'completed' : 'uncompleted'
                     }
                 }

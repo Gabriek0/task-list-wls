@@ -10,7 +10,7 @@ export function ModalEditTask({ id, isOpen, onRequestClose }: ModalProps) {
     const [description, setDescription] = useState('');
     const [isTaskCompleted, setIsTaskCompleted] = useState(false);
 
-    const { editTask } = useTasks();
+    const { tasks, editTask } = useTasks();
 
     function toggleTaskCompleted(isTaskCompleted: boolean) {
         if (isTaskCompleted) {
@@ -21,7 +21,6 @@ export function ModalEditTask({ id, isOpen, onRequestClose }: ModalProps) {
     };
 
     function handleChangeTask() {
-        console.log(id)
         if (id) {
             editTask(id, title, description, isTaskCompleted)
         }

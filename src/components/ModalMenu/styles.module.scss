@@ -97,3 +97,10 @@
         }
     }
 }
+
+@media screen and (min-width: 1366px) {
+    .modalMenuOverlay {
+        width: 192px;
+        background: var(--white);
+    }
+}

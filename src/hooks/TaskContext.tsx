@@ -32,9 +32,19 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
     }
 
     async function searchTask(searchTerm: string) {
-        setTasks((prevState: any) => {
-            return prevState.filter((task: TaskType) => task.title.includes(searchTerm) || task.description.includes(searchTerm))
-        });
+        if (searchTerm === '') {
+            getTasks();
+        } else if (searchTerm !== '') {
+            console.log('digitou algo')
+            setTasks((prevState: any) => {
+                return prevState.filter((task: TaskType) =>
+                    task.title.includes(searchTerm) || task.description.includes(searchTerm))
+            });
+        }
+
+
+
+
     }
 
     async function deleteTask(id: string) {
@@ -44,18 +54,23 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
         })
     }
 
-    async function createTask(title: string, description: string) {
-        const newTask = await api.post('tasks', {
-            title,
-            description
-        })
+    async function createTask(title?: string, description?: string) {
 
-        const task = newTask.data;
+        try {
+            const newTask = await api.post('tasks', {
+                title: title === '' ? '' : title,
+                description: description === '' ? '' : description
+            })
 
+            const task = newTask.data;
 
-        setTasks((prevState: any) => {
-            return [...prevState, task]
-        })
+            setTasks((prevState: any) => {
+                return [...prevState, task]
+            })
+
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     async function editTask(guid: string, title?: string, description?: string, situation?: boolean) {

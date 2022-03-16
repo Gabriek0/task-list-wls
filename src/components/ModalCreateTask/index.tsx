@@ -4,7 +4,6 @@ import styles from './style.module.scss';
 
 import { ModalProps } from '../../types/ModalProps';
 import { useState } from 'react';
-import api from '../../services/api';
 import { useTasks } from '../../hooks/TaskContext';
 
 export function ModalCreateTask({ isOpen, onRequestClose }: ModalProps) {
@@ -16,6 +15,8 @@ export function ModalCreateTask({ isOpen, onRequestClose }: ModalProps) {
     function handleCreateTask() {
         createTask(taskTitle, taskDescription);
         onRequestClose();
+        setTaskTitle('');
+        setTaskDescription('');
     }
 
     return (
@@ -31,6 +32,7 @@ export function ModalCreateTask({ isOpen, onRequestClose }: ModalProps) {
                 <div className={styles.inputsContainer}>
                     <div className={styles.inputName}>
                         <input
+                            value={taskTitle}
                             type="text"
                             placeholder=""
                             onChange={(event) => setTaskTitle(event?.target.value)}
@@ -40,6 +42,7 @@ export function ModalCreateTask({ isOpen, onRequestClose }: ModalProps) {
 
                     <div className={styles.inputDescription}>
                         <input
+                            value={taskDescription}
                             type="text"
                             placeholder=""
                             onChange={(event) => setTaskDescription(event?.target.value)}

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import menuIcon from '../../../public/images/menu.svg';
 import searchIcon from '../../../public/images/search.svg';
 import { useTasks } from '../../hooks/TaskContext';
 import { MenuButton } from '../MenuButton';
@@ -14,10 +13,9 @@ export function Header() {
     const { searchTask } = useTasks();
 
     useEffect(() => {
-        if (searchTerm.length > 0) {
-            searchTask(searchTerm)
-        }
+        searchTask(searchTerm)
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchTerm]);
 
     return (
@@ -36,6 +34,7 @@ export function Header() {
                         />
                     </div>
                     <input
+                        value={searchTerm}
                         onChange={(event) => setSearchTerm(event.target.value)}
                         type="text"
                         placeholder='Procurar tarefas' />

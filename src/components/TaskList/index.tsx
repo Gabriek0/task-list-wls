@@ -1,5 +1,3 @@
-import api from '../../services/api';
-import { useEffect, useState } from 'react';
 import { Task } from '../Task';
 import { useTasks } from '../../hooks/TaskContext';
 

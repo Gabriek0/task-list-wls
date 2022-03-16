@@ -67,7 +67,10 @@ This project was developed with the following technologies:
 ### Installation and contributing
 
 ```bash
-# Clone the repository, open its folder and install dependencies with:
+# Clone the repository:
+git clone https://github.com/Gabriek0/task-list-wls.git
+
+# Open its folder and install dependencies with:
 yarn
 
 # Run it using

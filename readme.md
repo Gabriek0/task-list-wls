@@ -22,13 +22,13 @@ The project is responsive, it was built to support two screen sizes:
 </div>
 <br></br>
 
-
 ### 🤔 What is the purpose of the project?
-O projeto tem o objetivo de consumir uma API, e com base nisso inserir, editar, remover e filtrar dados. Assim, o usuário tem total liberdade para manipular a lista de tarefas.
+
+The project aims to consume an API, and based on that, insert, edit, remove and filter data. Thus, the user has complete freedom to manipulate the task list. 
 
 <br></br>
 
-### Functionalities
+### ⚙️ Functionalities
   - [x] User can add a task
   - [x] User can edit a task
   - [x] User can delete a task
@@ -37,9 +37,10 @@ O projeto tem o objetivo de consumir uma API, e com base nisso inserir, editar, 
   
 <br></br>
 
-### How to access the layout?
-The project layout can be acessed with this link: [Figma](https://www.figma.com/file/omOeuP0G10ZgrpsZ01PdNr/Lista-de-Tarefas-(Copy)?node-id=0%3A1)
+### 📂 How to access the layout?
+The project layout can be acessed with this link: [Figma](https://www.figma.com/file/omOeuP0G10ZgrpsZ01PdNr/Lista-de-Tarefas-(Copy)?node-id=0%3A1).
 
+<br></br>
 
 ### :nut_and_bolt: Technologies
 

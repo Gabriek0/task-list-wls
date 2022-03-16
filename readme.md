@@ -4,8 +4,7 @@
 <h1 align="center">Task List </h1>
 
 
-
-### Preview
+### 🖥️ Preview
 The project is responsive, it was built to support two screen sizes:
 <br></br>
 
@@ -22,14 +21,25 @@ The project is responsive, it was built to support two screen sizes:
 <p>The screen size for mobile is 375x812px (iPhone X)</p>
 </div>
 <br></br>
-### Functionalities
+
+### 🤔 What is the purpose of the project?
+O projeto tem o objetivo de consumir uma API, e com base nisso inserir, editar, remover e filtrar dados. Assim, o usuário tem total liberdade para manipular a lista de tarefas.
+
+<br></br>
+
+### ⚙️ Functionalities
   - [x] User can add a task
   - [x] User can edit a task
   - [x] User can delete a task
   - [x] User can search for a task
   - [x] There is responsiveness on 1366x728 and 375x812 screens
-
+  
 <br></br>
+
+### How to access the layout?
+The project layout can be acessed with this link: [Figma](https://www.figma.com/file/omOeuP0G10ZgrpsZ01PdNr/Lista-de-Tarefas-(Copy)?node-id=0%3A1)
+
+
 ### :nut_and_bolt: Technologies
 
 This project was developed with the following technologies:

@@ -22,6 +22,7 @@ The project is responsive, it was built to support two screen sizes:
 <p>The screen size for mobile is 375x812px (iPhone X)</p>
 </div>
 <br></br>
+
 ### Functionalities
   - [x] User can add a task
   - [x] User can edit a task
@@ -30,6 +31,7 @@ The project is responsive, it was built to support two screen sizes:
   - [x] There is responsiveness on 1366x728 and 375x812 screens
 
 <br></br>
+
 ### :nut_and_bolt: Technologies
 
 This project was developed with the following technologies:

@@ -38,7 +38,7 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
             console.log('digitou algo')
             setTasks((prevState: any) => {
                 return prevState.filter((task: TaskType) =>
-                    task.title.includes(searchTerm) || task.description.includes(searchTerm))
+                    task.title.toLowerCase().includes(searchTerm.toLowerCase()) || task.description.toLowerCase().includes(searchTerm.toLowerCase()))
             });
         }
 

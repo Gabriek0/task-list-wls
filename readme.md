@@ -3,7 +3,7 @@
 </div>
 <h1 align="center">Task List </h1>
 
-👉 Access the project: [Task List](task-list-wls.vercel.app)
+👉 Access the project: [Task List](https://task-list-wls.vercel.app/)
 
 ### 🖥️ Preview
 The project is responsive, it was built to support two screen sizes:
